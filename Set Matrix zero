@@ -1,0 +1,48 @@
+       Boolean flag1= false;
+        Boolean flag2 = false;
+        //checking if the first row has zero
+        for(int j =0 ; j<arr[0].length;j++){
+        if(arr[0][j]==0)
+        flag1=true;
+        }
+        //checking if first column has zero
+        for(int i =0 ; i<arr.length;i++){
+        if(arr[i][0]==0)
+        flag2=true;
+        }
+        //checking if any element of matrix is zero
+        for(int i=0;i<arr.length;i++){
+            for(int j=0;j<arr[0].length;j++){
+                if(arr[i][j]==0){
+                    arr[0][j]=0;
+                    arr[i][0]=0;
+                }
+            }
+        }
+        //setting the zeros according to first row and column
+        for(int i=1;i<arr[0].length;i++){
+            if(arr[0][i]==0){
+                for(int j=1;j<arr.length;j++){
+                   arr[j][i]=0;
+                }
+            }
+        }
+        for(int j=1 ;j<arr.length;j++){
+            if(arr[j][0]==0){
+                for(int i =1;i<arr[0].length;i++){
+                    arr[j][i]=0;
+                }
+            }
+        }
+        if(flag1){
+            for(int i=0;i<arr[0].length;i++){
+                arr[0][i]=0;
+            }
+
+        }
+        if(flag2){
+            for(int i =0 ;i<arr.length;i++){
+                arr[i][0]=0;
+            }
+        }
+            
